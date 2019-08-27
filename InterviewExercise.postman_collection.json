@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "243c0907-a059-487d-a221-c51176f4cdec",
+		"name": "InterviewExercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hotel reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e28fcd5-738d-4e9d-bd14-5045266c55a3",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"arrivals\": [1, 3, 5, 5, 5],\n    \"departure\": [2, 6, 10, 7, 8],\n    \"k\": 3\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/hotel-reservation",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"hotel-reservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rotate Image",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1266ae5b-1202-44f8-ab1c-6043a855528c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"arrivals\": [1, 3, 5, 5, 5],\n    \"departure\": [2, 6, 10, 7, 8],\n    \"k\": 3\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/rotate-image",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"rotate-image"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "df005311-8205-4386-a905-b981dce301a3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "64fe4fa6-ed4e-4604-b6fe-3429adad4f87",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Content-Type is present\", function () {",
+					"    pm.response.to.have.header(\"Content-Type\");",
+					"});",
+					"",
+					"pm.test(\"Response time is less than 300ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(300);",
+					"});"
+				]
+			}
+		}
+	]
+}
