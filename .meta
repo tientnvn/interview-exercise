@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "backend": "git@github.com:tientnvn/exercise-01.git",
+    "frontend": "git@github.com:tientnvn/frontend-app.git"
+  }
+}

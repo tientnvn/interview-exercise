@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  rotate-image:
+    image: tientn/exercise-01:latest
+    env_file: .env
+    command: /bin/sh -c "yarn start"
+    ports:
+      - '3001:3000'
+  frontend:
+    image: tientn/frontend-app:latest
+    env_file: .env
+    command: /bin/sh -c "serve"
+    ports:
+      - '5001:5000'
